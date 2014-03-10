@@ -1,11 +1,11 @@
 var app = angular.module('myapp',['ngRoute'])
                  .config(function($routeProvider,$locationProvider){
                    $routeProvider.when('/',{
-                      templateUrl:'./main.html',
+                      templateUrl:'./view/main.html',
                       controller: 'main'
                    })
                    .when('/module/:module_name',{
-                      templateUrl:'./detail.html',
+                      templateUrl:'./view/detail.html',
                       controller:'module'
                    })
                    .otherwise({
