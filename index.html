@@ -15,8 +15,18 @@
     <script type="text/javascript" charset="utf-8" src='./app/app.js'></script>
     <link rel="stylesheet" href="./css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="./css/semantic.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <style type="text/css" media="screen">
+      body{
+        background-image:url('./src/bg.jpg');
+      }
+    </style>
 </head>
   <body ng-app='myapp'>
   <ng-view></ng-view>
+  <!--页脚部分-->
+  <div class='container'>
+    <div class='ui divider'></div>
+    <p style='text-align:center'>本站基于 <b>gitpage</b> <b>AngularJS</b> <b>Firebase</b> <b>Semantic</b> 搭建 &copy 2014</p>
+  </div>
   </body>
 </html>
