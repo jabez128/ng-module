@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ng-module</title>
+    <title>ng-module -- 发现你想要的AngularJS模块</title>
     <meta charset='utf-8'>
     <meta name="author" content="张小俊128">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,41 +12,9 @@
     <script src="./lib/jquery.js"></script>
     <script type="text/javascript" charset="utf-8" src='./lib/angular.js'></script>
     <script type="text/javascript" charset="utf-8" src='./lib/angular-route.min.js'></script>
-    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8" src='./app/app.js'></script>
-    <style type="text/css" media="screen">
-        *{
-          background-image: url('./src/bg1.png') repeat;
-        }
-        #main{
-          margin-top:80px;
-        }
-        .red{
-          background: red;
-        }
-        .green{
-          background: green;
-        }
-        .block{
-          margin-top: 10px;
-          padding: 10px;
-        }
-        .tags{
-          padding: 10px;
-        }
-        .tag{
-          margin-top:10px;
-        }
-        .sidebar{
-          background: #F7F5FA;
-        }
-        .module{
-          border-left: 3px solid #5BC0DE;
-          box-shadow: 0px 0px 3px #171515;
-          background: #F4F8FA;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./css/semantic.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
   <body ng-app='myapp'>
   <ng-view></ng-view>
