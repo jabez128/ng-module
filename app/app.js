@@ -1,4 +1,4 @@
-var app = angular.module('myapp',['ngRoute'])
+var app = angular.module('myapp',['ngRoute','firebase'])
                  .config(function($routeProvider,$locationProvider){
                    $routeProvider.when('/',{
                       templateUrl:'./view/main.html',
@@ -18,10 +18,28 @@ var app = angular.module('myapp',['ngRoute'])
                 $locationProvider.hashPrefix('!');
                  });
 
-   app.controller('main',function($scope,$location){
-     $scope.gojob = function(){
-        $location.path('/job');
-     };
+    /*
+    **下面是编辑指令的部分
+    */
+
+
+
+  /*
+  **下面是控制器部分
+  */
+   app.controller('main',function($scope,$firebase){
+     var ref1 = new Firebase('https://ng-module.firebaseIO.com');
+     var ref2 = new Firebase('https://ng-visitor.firebaseIO.com');
+     $scope.modules = $firebase(ref1);
+     $scope.visitor = $firebase(ref2);
+     var interval = setInterval(function(){
+       console.log($scope.visitor.number);
+       if(typeof $scope.visitor.number === 'number'){
+       $scope.visitor.number = $scope.visitor.number + 1;
+       $scope.visitor.$save('number');
+       clearInterval(interval);
+       }
+     },1000);
 
    });
 
@@ -29,9 +47,7 @@ var app = angular.module('myapp',['ngRoute'])
        $scope.name = $routeParams.module_name;
      });
 
-   app.controller('job',function($scope,$location){
-     $scope.gomain = function(){
-        $location.path('/');
-     };
-     $scope.visitors = 0;
+   app.controller('job',function($scope,$firebase){
+    var ref = new Firebase('https://ng-visitor.firebaseIO.com');
+    $scope.visitor = $firebase(ref);
    });

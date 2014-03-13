@@ -2,16 +2,16 @@
 <!--这里是导航部分-->
 <div class="ui red inverted menu">
   <div class='container'>
-  <a class="active item" src='/'>
+  <a class="active item" href='/'>
     <i class="large home icon"></i> ng-module
   </a>
-  <a class="item" ng-click='gojob()'>
+  <a class="item" href='#!/job'>
     <i class="large users icon"></i> ng-job
   </a>
   <div class="right menu">
     <div class="item">
       <div class="ui icon input">
-        <input type="text" placeholder="查找你想要的模块">
+        <input type="text" placeholder="查找你想要的模块" ng-model='serachText'/>
         <i class="search link icon"></i>
       </div>
     </div>
@@ -27,9 +27,12 @@
 
       <!--这里下面是左边的内容栏-->
       <div class='twelve wide column'>
-        <div class='ui segment'>你好世界</div>
-        <div class='ui segment'>你好世界</div>
-        <div class='ui segment'>你好世界</div>
+        <div class='ui ingnore green message' ng-show='!modules.ionic'><i class='heart icon'></i>正在载入中，请稍等一会么么</div>
+        <div class='ui segment' ng-repeat='module in modules | filter:searchText'>
+          <a ng-href='{{module.link}}'><h1>{{module.name}}</h1></a>
+          <div class='ui divider'></div>
+          <p>{{module.description}}</p>
+        </div>
       </div>
 
 
@@ -40,7 +43,7 @@
           <i class="tags icon"></i> 模块标签
           <div class='ui divider'></div>
           <div class='menu'>
-            <a class='item active'>路由</a>
+            <a class='item'>路由</a>
             <a class='item'>路由</a>
           </div>
         </div>
