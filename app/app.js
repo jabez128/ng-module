@@ -1,4 +1,4 @@
-var app = angular.module('myapp',['ngRoute','firebase'])
+var app = angular.module('myapp',['ngRoute','firebase','btford.markdown'])
                  .config(function($routeProvider,$locationProvider){
                    $routeProvider.when('/',{
                       templateUrl:'./view/main.html',
@@ -51,10 +51,20 @@ var app = angular.module('myapp',['ngRoute','firebase'])
      });
 
    app.controller('job',function($scope,$firebase){
-    var ref = new Firebase('https://ng-visitor.firebaseIO.com');
-    $scope.visitor = $firebase(ref);
+    var ref1 = new Firebase('https://ng-visitor.firebaseIO.com');
+    $scope.visitor = $firebase(ref1);
+    var ref2 = new Firebase('https://ng-job.firebaseIO.com');
+    $scope.jobs = $firebase(ref2);
    });
 
-   app.controller('edit',function($scope,$firebase){
+   app.controller('edit',function($scope,$firebase,$window,$location){
      $scope.post = {};
+     var ref = new Firebase('https://ng-job.firebaseIO.com');
+     $scope.jobs = $firebase(ref);
+     $scope.submit = function(){
+       $scope.jobs.$add({title: $scope.post.title, content: $scope.post.content}).then(function(ref) {
+           $window.alert('添加成功！');
+           $location.path('/job');
+    });
+     }
    })

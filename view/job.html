@@ -17,8 +17,11 @@
 
     <!--左边的工作发布区-->
     <div class='twelve wide column'>
-        <div class='ui ignore red message'>
-          <h1>现在还没有任何工作可以提供额%>_<%</h1>
+        <div class='ui green message'><i class='heart icon'></i>载入中么么...</div>
+        <div class='ui ignore blue message' ng-repeat='job in jobs'>
+          <h1>{{job.title}}</h1>
+          <div class='ui divider'></div>
+          <p btf-markdown='job.content'></p>
         </div>
     </div>
 

@@ -20,7 +20,7 @@
               <label></label>
               <textarea ng-model='post.content'></textarea>
 
-                <div class="ui blue fluid submit button">提交</div>
+                <div class="ui blue fluid submit button" ng-click='submit()'>提交</div>
 
             </div>
           </div>
@@ -32,7 +32,7 @@
         <div class='ui red message'>
           <h1>{{post.title}}</h1>
           <div class='ui divider'></div>
-          <div>{{post.content}}</div>
+          <div btf-markdown='post.content'></div>
         </div>
       </div>
 
