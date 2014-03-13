@@ -8,6 +8,9 @@
   <a class="item active">
     <i class="large users icon"></i> ng-job
   </a>
+  <a class="item" href='#!/book'>
+    <i class="large book icon"></i> ng-book
+  </a>
 </div>
 </div>
 
@@ -17,9 +20,10 @@
 
     <!--左边的工作发布区-->
     <div class='twelve wide column'>
-        <div class='ui green message'><i class='heart icon'></i>载入中么么...</div>
-        <div class='ui ignore blue message' ng-repeat='job in jobs'>
+        <div class='ui green message' ng-show='!loaded'><i class='heart icon'></i>正在载入中，请稍等一会么么...</div>
+        <div class='ui ignore blue message' ng-repeat='job in jobs | orderByPriority | reverse'>
           <h1>{{job.title}}</h1>
+          <h2>{{job.$priority}}</h2>
           <div class='ui divider'></div>
           <p btf-markdown='job.content'></p>
         </div>

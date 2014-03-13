@@ -8,6 +8,9 @@
   <a class="item" href='#!/job'>
     <i class="large users icon"></i> ng-job
   </a>
+  <a class="item" href='#!/book'>
+    <i class="large book icon"></i> ng-book
+  </a>
   <div class="right menu">
     <div class="item">
       <div class="ui icon input">
@@ -27,7 +30,7 @@
 
       <!--这里下面是左边的内容栏-->
       <div class='twelve wide column'>
-        <div class='ui ingnore green message' ng-show='!modules.ionic'><i class='heart icon'></i>正在载入中，请稍等一会么么</div>
+        <div class='ui ingnore green message' ng-show='!loaded'><i class='heart icon'></i>正在载入中，请稍等一会么么</div>
         <div class='ui segment' ng-repeat='module in modules | filter:searchText'>
           <a ng-href='{{module.link}}'><h1>{{module.name}}</h1></a>
           <div class='ui divider'></div>
