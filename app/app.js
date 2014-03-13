@@ -98,6 +98,6 @@ var app = angular.module('myapp',['ngRoute','firebase','btford.markdown'])
      }
    });
 
-   app.controller('job',function($scope,$firebase){
-     
+   app.controller('book',function($scope,$firebase){
+
    })
