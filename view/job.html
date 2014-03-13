@@ -1,0 +1,38 @@
+
+<!--这里是导航部分-->
+<div class="ui red inverted menu">
+  <div class='container'>
+  <a class="item" ng-click='gomain()'>
+    <i class="large home icon"></i> ng-module
+  </a>
+  <a class="item active">
+    <i class="large users icon"></i> ng-job
+  </a>
+</div>
+</div>
+
+<!--主体部分-->
+<div class='container'>
+  <div class='ui grid'>
+
+    <!--左边的工作发布区-->
+    <div class='twelve wide column'>
+        <div class='ui ignore red message'>
+          <h1>现在还没有任何工作可以提供额%>_<%</h1>
+        </div>
+    </div>
+
+    <!--右边的边栏区-->
+    <div class='four wide column'>
+      <div class='ui info message'>
+        <div class='ui segment'>
+          <h3>已经有<b style='color:#D95C5C;'>{{visitors}}</b>位AngularJS程序员来过这里，在这里找到你想找的人</h3>
+        </div>
+        <a class="ui fluid blue labeled submit icon button"><i class='icon edit'></i><b>发布一份AngularJS工作</b></a>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
