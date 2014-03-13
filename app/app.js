@@ -61,7 +61,7 @@ var app = angular.module('myapp',['ngRoute','firebase','btford.markdown'])
        $scope.loaded = true;
      });
      var interval = setInterval(function(){
-       console.log($scope.visitor.number);
+       //console.log($scope.visitor.number);
        if(typeof $scope.visitor.number === 'number'){
        $scope.visitor.number = $scope.visitor.number + 1;
        $scope.visitor.$save('number');
