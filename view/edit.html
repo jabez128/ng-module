@@ -1,0 +1,45 @@
+<div class='ui grid'>
+
+  <!--顶头提示-->
+  <div class='container'>
+    <div class='ui grid'>
+      <div class='sixteen wide column'><div class='ui blue message'><h4>本编辑器采用markdown语法，左边编辑，右边预览</h4></div></div>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='ui grid'>
+
+      <!--左边编辑界面-->
+      <div class='eight wide column'>
+        <div class='ui segment'>
+          <div class='ui form'>
+            <div class='fieldset'>
+
+              <input type='text' placeholder='在这里输入标题' ng-model='post.title'/>
+              <label></label>
+              <textarea ng-model='post.content'></textarea>
+
+                <div class="ui blue fluid submit button">提交</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--右边预览界面-->
+      <div class='eight wide column'>
+        <div class='ui red message'>
+          <h1>{{post.title}}</h1>
+          <div class='ui divider'></div>
+          <div>{{post.content}}</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</div>

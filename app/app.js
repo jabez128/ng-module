@@ -11,6 +11,9 @@ var app = angular.module('myapp',['ngRoute','firebase'])
                    .when('/job',{
                      templateUrl: './view/job.html',
                      controller: 'job'
+                   }).when('/edit',{
+                     templateUrl: './view/edit.html',
+                     controller: 'edit'
                    })
                    .otherwise({
                      redirectTo:'/'
@@ -51,3 +54,7 @@ var app = angular.module('myapp',['ngRoute','firebase'])
     var ref = new Firebase('https://ng-visitor.firebaseIO.com');
     $scope.visitor = $firebase(ref);
    });
+
+   app.controller('edit',function($scope,$firebase){
+     $scope.post = {};
+   })
