@@ -47,7 +47,17 @@ var app = angular.module('myapp',['ngRoute','firebase','btford.markdown'])
       };
    });
 
-
+  app.filter('search',function(){
+    return function(items,searchText){
+      var result = [];
+      angular.forEach(items,function(item){
+        if(item.name.match(searchText)){
+          result.push(item);
+        }
+      });
+      return result;
+    };
+  });
   /*
   **下面是控制器部分
   */
